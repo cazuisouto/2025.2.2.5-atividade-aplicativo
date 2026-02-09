@@ -1,10 +1,67 @@
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulte IBGE</title>
+    <title>CEP Localizador | Consulta e Histórico</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+    <header>
+        <h1>📍 CEP Localizador</h1>
+        <p>Consulte endereços de todo o Brasil</p>
+    </header>
+
+    <main id="app">
+        <section class="search-container" aria-labelledby="search-title">
+            <h2 id="search-title" class="sr-only">Formulário de busca</h2>
+            <form id="cep-form">
+                <div class="input-box">
+                    <label for="cep-input">Digite o CEP (apenas números):</label>
+                    <input 
+                        type="text" 
+                        id="cep-input" 
+                        placeholder="Ex: 01001000" 
+                        maxlength="8" 
+                        required
+                    >
+                    <button type="submit" id="search-btn">Buscar Endereço</button>
+                </div>
+            </form>
+        </section>
+
+        <div id="feedback-container" aria-live="polite"></div>
+
+        <section id="result-display" class="hidden">
+            <h3>Resultado Encontrado:</h3>
+            <div id="current-address-card" class="address-card">
+                </div>
+            <button id="save-btn" class="btn-save">⭐ Salvar nos Favoritos</button>
+        </section>
+
+        <hr>
+
+        <section class="history-container" aria-labelledby="history-title">
+            <h2 id="history-title">📌 Endereços Salvos</h2>
+            <div class="table-responsive">
+                <table id="favorites-table">
+                    <thead>
+                        <tr>
+                            <th>CEP</th>
+                            <th>Logradouro</th>
+                            <th>Bairro</th>
+                            <th>Cidade/UF</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-body">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
