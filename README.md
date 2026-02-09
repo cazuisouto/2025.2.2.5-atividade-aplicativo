@@ -6,7 +6,7 @@
 - **grupo**: pode ser desenvolvido em grupo mas a apresentação será individual.
 
 ## Instruções
-- [ ] Fork desse repositório
+- [X] Fork desse repositório
 - [ ] Criar e conectar um projeto no vercel ao repositório github
 - [ ] Escolha um tema para aplicativo
 - [ ] Construa o HTML + CSS estático
